@@ -1,0 +1,68 @@
+{
+  "name": "desafe-backend",
+  "version": "1.0.0",
+  "description": "EdTech web and mobile app focused on Learning Management System (LMS) for learning content creators",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "export NODE_ENV=prod && node .",
+    "pre-prod": "export NODE_ENV=pre-prod && node .",
+    "start:dev": "set NODE_ENV=prod && nodemon .",
+    "pre-prod:dev": "set NODE_ENV=pre-prod && nodemon .",
+    "dev": "set NODE_ENV=dev && nodemon .",
+	"lint": "eslint  --ext .js src --fix",
+	"prettier": "prettier --write src",
+    "format": "npm run prettier && npm run lint",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/depaxTech/Desafe-backend.git"
+  },
+  "keywords": [
+    "EdTech",
+    "LMS",
+    "Learning Management System",
+    "Education Technology",
+    "Content Creators"
+  ],
+  "author": "shrouk elbassiuony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/depaxTech/Desafe-backend/issues"
+  },
+  "homepage": "https://github.com/depaxTech/Desafe-backend#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1628.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "express-validator": "^7.1.0",
+    "firebase-admin": "^12.1.1",
+    "mongoose": "^8.4.0",
+    "multer": "^1.4.5-lts.1",
+    "twilio": "^5.1.0"
+  },
+  "devDependencies": {
+	"eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.1",
+    "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "eslint --max-warnings 0 ."
+    ]
+  }
+}
